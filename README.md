@@ -11,8 +11,8 @@ Install the extension for Visual Studio 2019. The extension can be accessed from
 ### Adding a new command
 Copy selected command, save, compile and run to test it works. Lets say the command was saved in the first slot.
 
-Go to keyboard shortcuts in options (`Tools -> Options -> Environment -> Keyboard`). Search for `VCmd.Command01` and set Global hotkey.
-For GoToMember command you would want to set the context as `Text editor` instead of Global.
+Go to keyboard shortcuts in options (`Tools -> Options -> Environment -> Keyboard`). Search for `VCmd.Command01` and set `Global` hotkey.
+For GoToMember command you would want to set the context as `Text editor` instead of `Global`.
 
 ## Commands
 ### Searching anything from everywhere

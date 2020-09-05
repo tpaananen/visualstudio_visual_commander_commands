@@ -15,3 +15,8 @@ Shorcut command is Edit.GoToMember that we are executing. The difference is that
 ## Searching recent files
 
 Same anything from everywhere except the command is Edit.GoToRecentFile
+
+# Visual Commander
+You can find the extension from
+https://vlasovstudio.com/visual-commander/
+https://marketplace.visualstudio.com/items?itemName=SergeyVlasov.VisualCommander

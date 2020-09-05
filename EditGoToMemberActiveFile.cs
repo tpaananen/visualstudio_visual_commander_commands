@@ -4,6 +4,7 @@
 public class EditGoToMemberActiveFile : VisualCommanderExt.ICommand
 {
     // Bind to hotkey in the context of Text Editor
+    // This will throw an error when running from the VCmd editor window but works once you have an open document active
 
     public void Run(EnvDTE80.DTE2 DTE, Microsoft.VisualStudio.Shell.Package package) 
     {

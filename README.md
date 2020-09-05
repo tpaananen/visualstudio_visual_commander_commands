@@ -17,4 +17,4 @@ Shorcut command is Edit.GoToMember that we are executing. The difference is that
 
 ## Searching recent files
 
-Same anything from everywhere except the command is Edit.GoToRecentFile
+Same as search anything from everywhere except the command is Edit.GoToRecentFile which lists the recent files you have worked on.

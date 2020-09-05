@@ -1,6 +1,9 @@
 # Visual Studio 2019 Visual Commander extension commands
-
 Enhances how Visual Studio Go to search bar behaves when initiated using shortcut keys.
+
+### Visual Commander
+You can find the extension from https://marketplace.visualstudio.com/items?itemName=SergeyVlasov.VisualCommander
+More information about the extension https://vlasovstudio.com/visual-commander/
 
 ## Searching anything from everywhere
 
@@ -14,4 +17,4 @@ Shorcut command is Edit.GoToMember that we are executing. The difference is that
 
 ## Searching recent files
 
-Same anything from everywhere except the command is Edit.GoToRecentFile
+Same as search anything from everywhere except the command is Edit.GoToRecentFile which lists the recent files you have worked on.

@@ -1,7 +1,7 @@
 /// <summary>
-/// Search members from currently active file.
+/// Search members and types from currently active file.
 /// </summary>
-public class EditGoToMemberActiveFile : VisualCommanderExt.ICommand
+public class EditGoToSymbolActiveFile : VisualCommanderExt.ICommand
 {
     // Bind to hotkey in the context of Text Editor
     // This will throw an error when running from the VCmd editor window but works once you have an open document active
@@ -11,7 +11,7 @@ public class EditGoToMemberActiveFile : VisualCommanderExt.ICommand
         serviceProvider = package as System.IServiceProvider;
         SetSearchCurrentDocument(true);
         DTE.ExecuteCommand("SolutionExplorer.SyncWithActiveDocument");
-        DTE.ExecuteCommand("Edit.GoToMember");
+        DTE.ExecuteCommand("Edit.GoToSymbol");
     }
 
     private void SetSearchCurrentDocument(bool value)

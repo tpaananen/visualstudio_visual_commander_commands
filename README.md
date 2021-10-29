@@ -1,4 +1,4 @@
-# Visual Studio 2019 Visual Commander extension commands
+# Visual Studio 2019/2022 Visual Commander extension commands
 Enhances how Visual Studio Go to search bar behaves when initiated using shortcut keys.
 
 ### Visual Commander

@@ -6,7 +6,7 @@ You can find the extension from https://marketplace.visualstudio.com/items?itemN
 More information about the extension https://vlasovstudio.com/visual-commander/
 
 ## Setting the commands to work
-Install the extension for Visual Studio 2019. The extension can be accessed from the Extension menu in VS. Go to commands and add a new command.
+Install the extension for Visual Studio 2019 or 2022. The extension can be accessed from the Extension menu in VS. Go to commands and add a new command.
 
 ### Adding a new command
 Copy selected command, save, compile and run to test it works. Lets say the command was saved in the first slot.

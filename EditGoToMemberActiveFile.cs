@@ -4,29 +4,32 @@
 public class EditGoToSymbolActiveFile : VisualCommanderExt.ICommand
 {
     // Bind to hotkey in the context of Text Editor
-    // This will throw an error when running from the VCmd editor window but works once you have an open document active
 
     public void Run(EnvDTE80.DTE2 DTE, Microsoft.VisualStudio.Shell.Package package) 
     {
-        serviceProvider = package as System.IServiceProvider;
-        SetSearchCurrentDocument(true);
-        DTE.ExecuteCommand("SolutionExplorer.SyncWithActiveDocument");
+        System.IServiceProvider serviceProvider = package as System.IServiceProvider;
+        SetSearchCurrentDocument(serviceProvider, true);
+        SyncWithActiveDocument(DTE);
         DTE.ExecuteCommand("Edit.GoToSymbol");
     }
 
-    private void SetSearchCurrentDocument(bool value)
+    private void SetSearchCurrentDocument(System.IServiceProvider serviceProvider, bool value)
     {
-        System.Type t = serviceProvider.GetService(typeof(SVsNavigateToService)).
-            GetType().Assembly.GetType("Microsoft.VisualStudio.PlatformUI.NavigateToSettings");
-        object o = t.GetProperty("Instance",
-            System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static).
-            GetValue(null);
-        t.GetProperty("SearchCurrentDocument",
-            System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance).
-            SetValue(o, value);
+        System.Type type = serviceProvider.GetService(typeof(SVsNavigateToService)).GetType().Assembly.GetType("Microsoft.VisualStudio.PlatformUI.NavigateToSettings");
+        object obj = type
+           .GetProperty("Instance", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+           .GetValue(null);
+        type.GetProperty("SearchCurrentDocument", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance).SetValue(obj, value);
     }
-
-    private System.IServiceProvider serviceProvider;
+    
+    private void SyncWithActiveDocument(EnvDTE80.DTE2 DTE) 
+    {
+        try 
+        {
+       	    DTE.ExecuteCommand("SolutionExplorer.SyncWithActiveDocument");
+	    }
+	    catch (System.Runtime.InteropServices.COMException) {} // catch if no active file
+    }
 }
 
 [System.Runtime.InteropServices.Guid("65C44EF9-16F8-4F36-BD73-F10335EC452E")]
